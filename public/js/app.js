@@ -39,7 +39,7 @@ class TimersDashboard extends React.Component {
       timers: this.state.timers.concat(t),
     });
 
-    client.createTimer({ title: t.title, project: t.project, id: t.id });
+    client.createTimer(t);
   };
 
   deleteTimer = (timerId) => {
@@ -99,11 +99,7 @@ class TimersDashboard extends React.Component {
       }),
     });
 
-    client.updateTimer({
-      id: params.id,
-      title: params.title,
-      project: params.project,
-    });
+    client.updateTimer(params);
   };
 
   render() {
